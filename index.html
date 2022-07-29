@@ -10,23 +10,156 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .leaf{
+            position:absolute ;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+        }
+        .leaf div{
+        position:absolute ;
+        display:block ;
+        }
+        .leaf div:nth-child(1){
+            left:20%; 
+            animation:fall 15s linear infinite ;
+            animation-delay:-2s;
 
+        }
+        .leaf div:nth-child(2){
+            left:70%; 
+            animation:fall 15s linear infinite ;
+            animation-delay:-4s;
+        }
+        .leaf div:nth-child(3){
+            left:10%; 
+            animation:fall 20s linear infinite ;
+            animation-delay:-7s;
+            
+        }
+        .leaf div:nth-child(4){
+            left:50%; 
+        animation:fall 18s linear infinite ; 
+        animation-delay:-5s;
+        }
+        .leaf div:nth-child(5){
+            left:85%; 
+            animation:fall 14s linear infinite ;
+            animation-delay:-5s;
+        }
+        .leaf div:nth-child(6){
+            left:15%; 
+            animation:fall 16s linear infinite ;
+            animation-delay:-10s;
+        }
+        .leaf div:nth-child(7){
+            left:90%; 
+            animation:fall 15s linear infinite ;
+            animation-delay:-4s;
+        }
+
+        @keyframes fall{
+            0%{
+                opacity:1;
+                top:-10%;
+                transform:translateX (20px) rotate(0deg);
+            }
+            20%{
+                opacity:0.8;
+                transform:translateX (-20px) rotate(45deg);
+            }
+            40%{
+
+                transform:translateX (-20px) rotate(90deg);
+            }
+            60%{
+                
+            transform:translateX (-20px) rotate(135deg); 
+            }
+            80%{
+            
+                transform:translateX (-20px) rotate(180deg);
+            }
+            100%{
+                
+                top:110%;
+                transform:translateX (-20px) rotate(225deg);
+            }
+            }
+        .leaf1{
+            transform: rotateX(180deg);
+        }
+    </style>
 </head>
 <body style="margin: 0">
-    <div class="">
+    <div style="overflow: hidden">
+
         <iframe id="iframe--container" src="https://gifft.me/b#sH6UCCLh7oPnTFLnKJhJ" scrolling="no" title="W3Schools Free Online Web Tutorials" style="width: 100%; height: 100vh" frameborder="0"></iframe>
-        <div class="" style="background: rgba(0, 0, 0, .9); height: 100vh; width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center;">
+
+        <div id="main-wrapper" class="animate__animated" style="background: rgba(0, 0, 0, .97); height: 100vh; width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center">
-                <h2 class="animate__animated animate__fadeInDown animate__delay-1s" style="color: rgb(213, 213, 213); font-size: 0.8em; font-family: Poppins;">Please play the sound 💙</h2>
-                <audio class="animate__animated animate__fadeIn" id="player" src="audio/bg-music.mp3" style="opacity: 1" controls></audio>
+                <h2 id="player-title" class="animate__animated animate__fadeInDown animate__delay-1s" style="color: rgb(213, 213, 213); font-size: 0.8em; font-family: Poppins; margin-bottom: 20px;">Please play the sound Bb 💙</h2>
+                <audio id="player-audio" class="animate__animated animate__fadeIn animate__delay-3s" id="player" src="audio/bg-music.mp3" style="opacity: 1" controls></audio>
             </div>
+        </div>
+
+        
+        <div class="leaf hidden">
+            <div><p style="font-size: 3em">😘</p></div>
+            <div><p style="font-size: 2em">🤗</p></div>
+            <div><p style="font-size: 5em">😍</p></div>
+            <div><p style="font-size: 3em">😘</p></div>
+            <div><p style="font-size: 4em">💙</p></div>
+            <div><p style="font-size: 5em">😘</p></div>
+            <div><p style="font-size: 4em">🥺</p></div>
+                
+        </div>
+        
+        <div class="leaf leaf1 hidden">
+            <div><p style="font-size: 2em">😘</p></div>
+            <div><p style="font-size: 2em">👩‍❤️‍👩</p></div>
+            <div><p style="font-size: 3em">😍</p></div>
+            <div><p style="font-size: 3em">🤗</p></div>
+            <div><p style="font-size: 3em">😘</p></div>
+            <div><p style="font-size: 3em">😍</p></div>
+            <div><p style="font-size: 2em">❤️</p></div>
+                
+        </div>
+        
+        <div class="leaf leaf2 hidden">
+            <div><p style="font-size: 5em">😍</p></div>
+            <div><p style="font-size: 3em">😘</p></div>
+            <div><p style="font-size: 2em">👩‍❤️‍👩</p></div>
+            <div><p style="font-size: 3em">😘</p></div>
+            <div><p style="font-size: 3em">🤗</p></div>
+                
         </div>
     </div>
 
     <script>
-        var vid = document.getElementById("player");
-        vid.onplay = function() {
-            alert("Enjoy bb!");
+        var mainWrapper = document.getElementById("main-wrapper");
+        var playerTitle = document.getElementById("player-title");
+        var playerAudio = document.getElementById("player-audio");
+        var leaves = document.getElementsByClassName("leaf");
+
+        playerAudio.onplay = function() {
+            alert("Happy 3rd Monthsary Bb!");
+            playerTitle.classList.remove("animate__delay-1s");
+            playerAudio.classList.remove("animate__delay-3s");
+            setTimeout(() => {
+                
+                for (let index = 0; index < leaves.length; index++) {
+                    console.log(leaves)
+                    leaves[index].classList.remove("hidden")
+                }
+                playerTitle.classList.add("animate__zoomOutLeft");
+                playerAudio.classList.add("animate__zoomOutRight");
+            }, "1000")
         };
     </script>
 </body>
