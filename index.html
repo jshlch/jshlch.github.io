@@ -11,9 +11,9 @@
       
     <script type="text/javascript">
     window.addEventListener('load', () => {
-                getAudioContext().resume();
 				// noinspection JSUnresolvedVariable
 				let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                audioCtx.resume();
 				let xhr = new XMLHttpRequest();
 				xhr.open('GET', 'bg-music.mp3');
 				xhr.responseType = 'arraybuffer';
