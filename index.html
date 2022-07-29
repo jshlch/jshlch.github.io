@@ -14,6 +14,9 @@
         .hidden {
             display: none;
         }
+        .opacity-0 {
+            opacity: 0;
+        }
         .leaf{
             position:absolute ;
             width:100%;
@@ -104,12 +107,15 @@
         <div id="main-wrapper" class="animate__animated" style="background: rgba(0, 0, 0, .97); height: 100vh; width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center">
                 <h2 id="player-title" class="animate__animated animate__fadeInDown animate__delay-1s" style="color: rgb(213, 213, 213); font-size: 0.8em; font-family: Poppins; margin-bottom: 20px;">Please play the sound Bb 💙</h2>
-                <audio id="player-audio" class="animate__animated animate__fadeIn animate__delay-3s" id="player" src="audio/bg-music.mp3" style="opacity: 1" controls></audio>
+                <audio id="player-audio" class="animate__animated animate__fadeIn animate__delay-2s" id="player" src="audio/bg-music.mp3" style="opacity: 1" controls></audio>
             </div>
+            <video id="player-video" class="animate__animated hidden" style="border-radius: 10px; width: 70%; aspect-ratio: 16 / 9;" muted autoplay loop >
+                <source src="video/slideshow.mp4" type="video/mp4"/>
+            </video>
         </div>
 
         
-        <div class="leaf hidden">
+        <div class="animate__animated leaf hidden">
             <div><p style="font-size: 3em">😘</p></div>
             <div><p style="font-size: 2em">🤗</p></div>
             <div><p style="font-size: 5em">😍</p></div>
@@ -120,7 +126,7 @@
                 
         </div>
         
-        <div class="leaf leaf1 hidden">
+        <div class="animate__animated leaf leaf1 hidden">
             <div><p style="font-size: 2em">😘</p></div>
             <div><p style="font-size: 2em">👩‍❤️‍👩</p></div>
             <div><p style="font-size: 3em">😍</p></div>
@@ -131,7 +137,7 @@
                 
         </div>
         
-        <div class="leaf leaf2 hidden">
+        <div class="animate__animated leaf leaf2 hidden">
             <div><p style="font-size: 5em">😍</p></div>
             <div><p style="font-size: 3em">😘</p></div>
             <div><p style="font-size: 2em">👩‍❤️‍👩</p></div>
@@ -145,21 +151,27 @@
         var mainWrapper = document.getElementById("main-wrapper");
         var playerTitle = document.getElementById("player-title");
         var playerAudio = document.getElementById("player-audio");
+        var playerVideo = document.getElementById("player-video");
         var leaves = document.getElementsByClassName("leaf");
 
         playerAudio.onplay = function() {
-            alert("Happy 3rd Monthsary Bb!");
+            alert("Enjoy Bb!");
             playerTitle.classList.remove("animate__delay-1s");
-            playerAudio.classList.remove("animate__delay-3s");
+            playerAudio.classList.remove("animate__delay-2s");
+
             setTimeout(() => {
-                
                 for (let index = 0; index < leaves.length; index++) {
-                    console.log(leaves)
                     leaves[index].classList.remove("hidden")
+                    leaves[index].classList.add("animate__fadeIn")
                 }
                 playerTitle.classList.add("animate__zoomOutLeft");
                 playerAudio.classList.add("animate__zoomOutRight");
             }, "1000")
+
+            setTimeout(() => {
+                playerVideo.classList.remove("hidden");
+                playerVideo.classList.add("animate__fadeIn");
+            }, "3000")
         };
     </script>
 </body>
