@@ -144,7 +144,7 @@
                 
         </div>
     </div>
-    <iframe id="iframe--container" src="https://gifft.me/b#SDrvgcRHLXjiW8GdyY6v" scrolling="no" title="W3Schools Free Online Web Tutorials" style="width: 100%; height: 100vh" frameborder="0"></iframe>
+    <iframe id="iframe--container" src="https://gifft.me/b#SDrvgcRHLXjiW8GdyY6v" scrolling="no" title="W3Schools Free Online Web Tutorials" style="width: 100%; height: 100vh; z-index: 999999;" frameborder="0"></iframe>
 
     <script>
         var mainShit = document.getElementById("main-shit");
@@ -177,18 +177,18 @@
             }, "10000")
 
             setTimeout(() => {
-                mainWrapper.classList.add("animate__fadeOut");
-                mainWrapper.classList.add("hidden");
+                mainShit.classList.add("animate__fadeOut");
+                mainShit.classList.add("hidden");
 
-                for (let index = 0; index < leaves.length; index++) {
-                    leaves[index].classList.add("animate__fadeOut")
-                    leaves[index].classList.add("hidden")
-                }
+                // for (let index = 0; index < leaves.length; index++) {
+                //     leaves[index].classList.add("animate__fadeOut")
+                //     leaves[index].classList.add("hidden")
+                // }
 
-                setTimeout(() => {
-                    mainShit.remove();
-                }, "2000")
-            }, "72000")
+                // setTimeout(() => {
+                //     mainShit.remove();
+                // }, "2000")
+            }, "2000")
         };
 
     </script>
