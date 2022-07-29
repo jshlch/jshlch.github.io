@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy 3rd Monthsary</title>
-</head>
-<body>
-    <iframe id="iframe--container" src="https://gifft.me/b#sH6UCCLh7oPnTFLnKJhJ" scrolling="no" title="W3Schools Free Online Web Tutorials" style="width: 100%; height: 100vh; border: 1px solid red" frameborder="0"></iframe>
-      
-    <script type="text/javascript">
-    window.addEventListener('load', () => {
-				// noinspection JSUnresolvedVariable
-				let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                audioCtx.resume();
-				let xhr = new XMLHttpRequest();
-				xhr.open('GET', 'bg-music.mp3');
-				xhr.responseType = 'arraybuffer';
-				xhr.addEventListener('load', () => {
-					let playsound = (audioBuffer) => {
-						let source = audioCtx.createBufferSource();
-						source.buffer = audioBuffer;
-						source.connect(audioCtx.destination);
-						source.loop = false;
-						source.start();
-					};
+    <title>Happy 3rd Monthsary Bb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
-					audioCtx.decodeAudioData(xhr.response).then(playsound);
-				});
-				xhr.send();
-			});
+</head>
+<body style="margin: 0">
+    <div class="">
+        <iframe id="iframe--container" src="https://gifft.me/b#sH6UCCLh7oPnTFLnKJhJ" scrolling="no" title="W3Schools Free Online Web Tutorials" style="width: 100%; height: 100vh" frameborder="0"></iframe>
+        <div class="" style="background: rgba(0, 0, 0, .9); height: 100vh; width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center;">
+            <div style="text-align: center">
+                <h2 class="animate__animated animate__fadeInDown animate__delay-1s" style="color: rgb(213, 213, 213); font-size: 0.8em; font-family: Poppins;">Please play the sound 💙</h2>
+                <audio class="animate__animated animate__fadeIn" id="player" src="audio/bg-music.mp3" style="opacity: 1" controls></audio>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var vid = document.getElementById("player");
+        vid.onplay = function() {
+            alert("Enjoy bb!");
+        };
     </script>
 </body>
 </html>
