@@ -11,6 +11,7 @@
       
     <script type="text/javascript">
     window.addEventListener('load', () => {
+                getAudioContext().resume();
 				// noinspection JSUnresolvedVariable
 				let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 				let xhr = new XMLHttpRequest();
