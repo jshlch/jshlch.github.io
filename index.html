@@ -106,7 +106,8 @@
 
         <div id="main-wrapper" class="animate__animated" style="background: rgba(0, 0, 0, .97); height: 100vh; width: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center; flex-direction: column; overflow: hidden">
             <div style="text-align: center; width: auto;">
-                <h2 id="player-title" class="animate__animated animate__fadeInDown animate__delay-1s" style="color: rgb(213, 213, 213); font-size: 0.8em; font-family: Poppins; margin-bottom: 20px;">Please play the sound Bb 💙</h2>
+                <h2 id="player-title" class="animate__animated animate__fadeInDown animate__delay-1s" style="color: rgb(213, 213, 213); font-size: 0.8em; font-family: Poppins; margin-bottom: 10px;">Hi Baby! I hope you're doing good po 💙</h2>
+                <h2 id="player-desc" class="animate__animated animate__fadeInUp animate__delay-3s" style="color: rgb(96, 96, 96); font-size: 0.6em; font-family: Poppins; margin-bottom: 5px;">Please play the sound</h2>
                 <audio id="player-audio" class="animate__animated animate__fadeIn animate__delay-2s" id="player" src="audio/bg-music.mp3" style="opacity: 1" controls></audio>
             </div>
             <video id="player-video" class="animate__animated hidden" style="border-radius: 10px; width: 19rem; background-color: red;" muted autoplay loop >
@@ -150,6 +151,7 @@
     <script>
         var mainWrapper = document.getElementById("main-wrapper");
         var playerTitle = document.getElementById("player-title");
+        var playerDesc = document.getElementById("player-desc");
         var playerAudio = document.getElementById("player-audio");
         var playerVideo = document.getElementById("player-video");
         var leaves = document.getElementsByClassName("leaf");
@@ -158,6 +160,7 @@
             alert("Enjoy Bb!");
             playerTitle.classList.remove("animate__delay-1s");
             playerAudio.classList.remove("animate__delay-2s");
+            playerDesc.classList.remove("animate__delay-3s");
 
             setTimeout(() => {
                 for (let index = 0; index < leaves.length; index++) {
@@ -165,14 +168,20 @@
                     leaves[index].classList.add("animate__fadeIn")
                 }
                 playerTitle.classList.add("animate__zoomOutLeft");
+                playerDesc.classList.add("animate__fadeOut");
                 playerAudio.classList.add("animate__zoomOutRight");
-            }, "1000")
+            }, "5000")
 
             setTimeout(() => {
                 playerVideo.classList.remove("hidden");
                 playerVideo.classList.add("animate__fadeIn");
-            }, "1000")
+            }, "10000")
         };
+
+        setTimeout(() => {
+            mainWrapper.classList.add("animate__fadeOut");
+        }, "60000")
+
     </script>
 </body>
 </html>
