@@ -103,7 +103,7 @@
                 <h2 id="player-desc" class="animate__animated animate__fadeInUp animate__delay-3s" style="color: rgb(96, 96, 96); font-size: 0.6em; font-family: Poppins; margin-bottom: 5px;">Wear your earphones and click the play button to start</h2>
                 <audio id="player-audio" class="animate__animated animate__fadeIn animate__delay-2s" id="player" src="audio/bg-music.mp3" style="opacity: 1" controls></audio>
             </div>
-            <video id="player-video" class="animate__animated hidden" style="border-radius: 10px; width: 19rem; background-color: red;" muted autoplay loop >
+            <video id="player-video" class="animate__animated hidden" style="border-radius: 10px; width: 19rem; background-color: red; margin-top: -50px" muted autoplay loop >
                 <source src="video/slideshow.mp4" type="video/mp4"/>
             </video>
         </div>  
@@ -152,8 +152,7 @@
         var leaves = document.getElementsByClassName("leaf");
 
         playerAudio.onplay = function() {
-            alert("Enjoy Love!");
-            fadeAudioIn(playerVideo, 5)
+            alert("Enjoy love!");
 
             playerTitle.classList.remove("animate__delay-1s");
             playerAudio.classList.remove("animate__delay-2s");
@@ -188,24 +187,6 @@
                 // }, "2000")
             // , "70000")
         };
-
-        function fadeAudioIn(element, duration) {
-            var audio = element;
-            var currentTime = audio.currentTime;
-            var volume = 0;
-            var interval = 100; // Adjust the interval for smoother fading
-
-            audio.volume = 0;
-
-            var fadeInterval = setInterval(function () {
-                if (volume < 1) {
-                    volume += (interval / duration);
-                    audio.volume = volume.toFixed(2);
-                } else {
-                    clearInterval(fadeInterval);
-                }
-            }, interval);
-        }
 
     </script>
 </body>
